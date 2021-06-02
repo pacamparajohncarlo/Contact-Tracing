@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.brgyaddress = new System.Windows.Forms.Label();
-            this.purposeCT = new System.Windows.Forms.Button();
             this.namebttn = new System.Windows.Forms.Label();
             this.addressbttn = new System.Windows.Forms.Label();
             this.datevisit = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.textBoxbreathing = new System.Windows.Forms.TextBox();
             this.textBoxaches = new System.Windows.Forms.TextBox();
             this.savebttn = new System.Windows.Forms.Button();
+            this.infoCT = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // brgyaddress
@@ -65,18 +65,6 @@
             this.brgyaddress.Size = new System.Drawing.Size(585, 27);
             this.brgyaddress.TabIndex = 0;
             this.brgyaddress.Text = "Sitio Paenaan Barangay San Jose Antipolo City";
-            // 
-            // purposeCT
-            // 
-            this.purposeCT.BackColor = System.Drawing.Color.White;
-            this.purposeCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purposeCT.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.purposeCT.Location = new System.Drawing.Point(626, 413);
-            this.purposeCT.Name = "purposeCT";
-            this.purposeCT.Size = new System.Drawing.Size(162, 25);
-            this.purposeCT.TabIndex = 1;
-            this.purposeCT.Text = "What is Contact Tracing?";
-            this.purposeCT.UseVisualStyleBackColor = false;
             // 
             // namebttn
             // 
@@ -268,6 +256,16 @@
             this.savebttn.TabIndex = 23;
             this.savebttn.Text = "Save";
             this.savebttn.UseVisualStyleBackColor = true;
+            this.savebttn.Click += new System.EventHandler(this.Savebttn_Click);
+            // 
+            // infoCT
+            // 
+            this.infoCT.AutoSize = true;
+            this.infoCT.Location = new System.Drawing.Point(660, 428);
+            this.infoCT.Name = "infoCT";
+            this.infoCT.Size = new System.Drawing.Size(128, 13);
+            this.infoCT.TabIndex = 24;
+            this.infoCT.Text = "What is Contact Tracing?";
             // 
             // MainPage
             // 
@@ -276,6 +274,7 @@
             this.BackgroundImage = global::Contact_Tracing_App.Properties.Resources.img_8181;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.infoCT);
             this.Controls.Add(this.savebttn);
             this.Controls.Add(this.textBoxaches);
             this.Controls.Add(this.textBoxbreathing);
@@ -298,7 +297,6 @@
             this.Controls.Add(this.datevisit);
             this.Controls.Add(this.addressbttn);
             this.Controls.Add(this.namebttn);
-            this.Controls.Add(this.purposeCT);
             this.Controls.Add(this.brgyaddress);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainPage";
@@ -311,7 +309,6 @@
         #endregion
 
         private System.Windows.Forms.Label brgyaddress;
-        private System.Windows.Forms.Button purposeCT;
         private System.Windows.Forms.Label namebttn;
         private System.Windows.Forms.Label addressbttn;
         private System.Windows.Forms.Label datevisit;
@@ -334,6 +331,7 @@
         private System.Windows.Forms.TextBox textBoxbreathing;
         private System.Windows.Forms.TextBox textBoxaches;
         private System.Windows.Forms.Button savebttn;
+        private System.Windows.Forms.Label infoCT;
     }
 }
 

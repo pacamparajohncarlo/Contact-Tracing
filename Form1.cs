@@ -21,5 +21,12 @@ namespace Contact_Tracing_App
         {
 
         }
+
+        private void Savebttn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 pageforviewingrecords = new Form2();
+            pageforviewingrecords.Show();
+        }
     }
 }
