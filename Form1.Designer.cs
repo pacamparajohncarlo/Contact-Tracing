@@ -263,9 +263,8 @@
             this.infoCT.AutoSize = true;
             this.infoCT.Location = new System.Drawing.Point(660, 428);
             this.infoCT.Name = "infoCT";
-            this.infoCT.Size = new System.Drawing.Size(128, 13);
+            this.infoCT.Size = new System.Drawing.Size(0, 13);
             this.infoCT.TabIndex = 24;
-            this.infoCT.Text = "What is Contact Tracing?";
             // 
             // MainPage
             // 
