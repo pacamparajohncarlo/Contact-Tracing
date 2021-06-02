@@ -63,6 +63,16 @@ namespace Contact_Tracing_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1b55e4bdb4fc6051382e370bf26d5a59 {
+            get {
+                object obj = ResourceManager.GetObject("1b55e4bdb4fc6051382e370bf26d5a59", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_8181 {
             get {
                 object obj = ResourceManager.GetObject("img_8181", resourceCulture);
