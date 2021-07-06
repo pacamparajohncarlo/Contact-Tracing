@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.brgyaddress = new System.Windows.Forms.Label();
             this.namebttn = new System.Windows.Forms.Label();
@@ -43,16 +44,26 @@
             this.namewantvst = new System.Windows.Forms.Label();
             this.textBoxname = new System.Windows.Forms.TextBox();
             this.textBoxaddress = new System.Windows.Forms.TextBox();
-            this.textBoxdate = new System.Windows.Forms.TextBox();
-            this.textBoxbirth = new System.Windows.Forms.TextBox();
             this.textBoxnamevst = new System.Windows.Forms.TextBox();
             this.textBoxpurpose = new System.Windows.Forms.TextBox();
-            this.textBoxdrycough = new System.Windows.Forms.TextBox();
-            this.textBoxfever = new System.Windows.Forms.TextBox();
-            this.textBoxbreathing = new System.Windows.Forms.TextBox();
-            this.textBoxaches = new System.Windows.Forms.TextBox();
             this.savebttn = new System.Windows.Forms.Button();
             this.infoCT = new System.Windows.Forms.Label();
+            this.yes1 = new System.Windows.Forms.CheckBox();
+            this.yes2 = new System.Windows.Forms.CheckBox();
+            this.yes3 = new System.Windows.Forms.CheckBox();
+            this.yes4 = new System.Windows.Forms.CheckBox();
+            this.no1 = new System.Windows.Forms.CheckBox();
+            this.no2 = new System.Windows.Forms.CheckBox();
+            this.no3 = new System.Windows.Forms.CheckBox();
+            this.no4 = new System.Windows.Forms.CheckBox();
+            this.viewrecords = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.database1DataSet = new Contact_Tracing_App.Database1DataSet();
+            this.contactTracingRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contact_Tracing_RecordsTableAdapter = new Contact_Tracing_App.Database1DataSetTableAdapters.Contact_Tracing_RecordsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactTracingRecordsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // brgyaddress
@@ -179,34 +190,23 @@
             // 
             // textBoxname
             // 
-            this.textBoxname.Location = new System.Drawing.Point(114, 95);
+            this.textBoxname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactTracingRecordsBindingSource, "Name", true));
+            this.textBoxname.Location = new System.Drawing.Point(114, 94);
             this.textBoxname.Name = "textBoxname";
             this.textBoxname.Size = new System.Drawing.Size(375, 20);
             this.textBoxname.TabIndex = 13;
             // 
             // textBoxaddress
             // 
+            this.textBoxaddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactTracingRecordsBindingSource, "Home Address", true));
             this.textBoxaddress.Location = new System.Drawing.Point(176, 117);
             this.textBoxaddress.Name = "textBoxaddress";
             this.textBoxaddress.Size = new System.Drawing.Size(524, 20);
             this.textBoxaddress.TabIndex = 14;
             // 
-            // textBoxdate
-            // 
-            this.textBoxdate.Location = new System.Drawing.Point(140, 145);
-            this.textBoxdate.Name = "textBoxdate";
-            this.textBoxdate.Size = new System.Drawing.Size(282, 20);
-            this.textBoxdate.TabIndex = 15;
-            // 
-            // textBoxbirth
-            // 
-            this.textBoxbirth.Location = new System.Drawing.Point(153, 171);
-            this.textBoxbirth.Name = "textBoxbirth";
-            this.textBoxbirth.Size = new System.Drawing.Size(241, 20);
-            this.textBoxbirth.TabIndex = 16;
-            // 
             // textBoxnamevst
             // 
+            this.textBoxnamevst.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactTracingRecordsBindingSource, "Name of Person You Want to Visit", true));
             this.textBoxnamevst.Location = new System.Drawing.Point(297, 198);
             this.textBoxnamevst.Name = "textBoxnamevst";
             this.textBoxnamevst.Size = new System.Drawing.Size(362, 20);
@@ -214,45 +214,19 @@
             // 
             // textBoxpurpose
             // 
+            this.textBoxpurpose.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactTracingRecordsBindingSource, "Visiting Purpose", true));
             this.textBoxpurpose.Location = new System.Drawing.Point(186, 220);
             this.textBoxpurpose.Name = "textBoxpurpose";
             this.textBoxpurpose.Size = new System.Drawing.Size(265, 20);
             this.textBoxpurpose.TabIndex = 18;
-            // 
-            // textBoxdrycough
-            // 
-            this.textBoxdrycough.Location = new System.Drawing.Point(145, 269);
-            this.textBoxdrycough.Name = "textBoxdrycough";
-            this.textBoxdrycough.Size = new System.Drawing.Size(96, 20);
-            this.textBoxdrycough.TabIndex = 19;
-            // 
-            // textBoxfever
-            // 
-            this.textBoxfever.Location = new System.Drawing.Point(114, 294);
-            this.textBoxfever.Name = "textBoxfever";
-            this.textBoxfever.Size = new System.Drawing.Size(96, 20);
-            this.textBoxfever.TabIndex = 20;
-            // 
-            // textBoxbreathing
-            // 
-            this.textBoxbreathing.Location = new System.Drawing.Point(218, 318);
-            this.textBoxbreathing.Name = "textBoxbreathing";
-            this.textBoxbreathing.Size = new System.Drawing.Size(96, 20);
-            this.textBoxbreathing.TabIndex = 21;
-            // 
-            // textBoxaches
-            // 
-            this.textBoxaches.Location = new System.Drawing.Point(153, 347);
-            this.textBoxaches.Name = "textBoxaches";
-            this.textBoxaches.Size = new System.Drawing.Size(96, 20);
-            this.textBoxaches.TabIndex = 22;
+            this.textBoxpurpose.TextChanged += new System.EventHandler(this.TextBoxpurpose_TextChanged);
             // 
             // savebttn
             // 
             this.savebttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.savebttn.Location = new System.Drawing.Point(326, 374);
+            this.savebttn.Location = new System.Drawing.Point(346, 373);
             this.savebttn.Name = "savebttn";
-            this.savebttn.Size = new System.Drawing.Size(105, 28);
+            this.savebttn.Size = new System.Drawing.Size(105, 27);
             this.savebttn.TabIndex = 23;
             this.savebttn.Text = "Save";
             this.savebttn.UseVisualStyleBackColor = true;
@@ -266,6 +240,136 @@
             this.infoCT.Size = new System.Drawing.Size(0, 13);
             this.infoCT.TabIndex = 24;
             // 
+            // yes1
+            // 
+            this.yes1.AutoSize = true;
+            this.yes1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Dry Cough", true));
+            this.yes1.Location = new System.Drawing.Point(145, 271);
+            this.yes1.Name = "yes1";
+            this.yes1.Size = new System.Drawing.Size(44, 17);
+            this.yes1.TabIndex = 25;
+            this.yes1.Text = "Yes";
+            this.yes1.UseVisualStyleBackColor = true;
+            // 
+            // yes2
+            // 
+            this.yes2.AutoSize = true;
+            this.yes2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Fever", true));
+            this.yes2.Location = new System.Drawing.Point(114, 297);
+            this.yes2.Name = "yes2";
+            this.yes2.Size = new System.Drawing.Size(44, 17);
+            this.yes2.TabIndex = 26;
+            this.yes2.Text = "Yes";
+            this.yes2.UseVisualStyleBackColor = true;
+            // 
+            // yes3
+            // 
+            this.yes3.AutoSize = true;
+            this.yes3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Difficulty in Breathing", true));
+            this.yes3.Location = new System.Drawing.Point(218, 321);
+            this.yes3.Name = "yes3";
+            this.yes3.Size = new System.Drawing.Size(44, 17);
+            this.yes3.TabIndex = 27;
+            this.yes3.Text = "Yes";
+            this.yes3.UseVisualStyleBackColor = true;
+            // 
+            // yes4
+            // 
+            this.yes4.AutoSize = true;
+            this.yes4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Aches/Pain", true));
+            this.yes4.Location = new System.Drawing.Point(153, 345);
+            this.yes4.Name = "yes4";
+            this.yes4.Size = new System.Drawing.Size(44, 17);
+            this.yes4.TabIndex = 28;
+            this.yes4.Text = "Yes";
+            this.yes4.UseVisualStyleBackColor = true;
+            // 
+            // no1
+            // 
+            this.no1.AutoSize = true;
+            this.no1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Dry Cough", true));
+            this.no1.Location = new System.Drawing.Point(195, 270);
+            this.no1.Name = "no1";
+            this.no1.Size = new System.Drawing.Size(40, 17);
+            this.no1.TabIndex = 29;
+            this.no1.Text = "No";
+            this.no1.UseVisualStyleBackColor = true;
+            // 
+            // no2
+            // 
+            this.no2.AutoSize = true;
+            this.no2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Fever", true));
+            this.no2.Location = new System.Drawing.Point(164, 296);
+            this.no2.Name = "no2";
+            this.no2.Size = new System.Drawing.Size(40, 17);
+            this.no2.TabIndex = 30;
+            this.no2.Text = "No";
+            this.no2.UseVisualStyleBackColor = true;
+            // 
+            // no3
+            // 
+            this.no3.AutoSize = true;
+            this.no3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Difficulty in Breathing", true));
+            this.no3.Location = new System.Drawing.Point(268, 322);
+            this.no3.Name = "no3";
+            this.no3.Size = new System.Drawing.Size(40, 17);
+            this.no3.TabIndex = 31;
+            this.no3.Text = "No";
+            this.no3.UseVisualStyleBackColor = true;
+            this.no3.CheckedChanged += new System.EventHandler(this.No3_CheckedChanged);
+            // 
+            // no4
+            // 
+            this.no4.AutoSize = true;
+            this.no4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contactTracingRecordsBindingSource, "Aches/Pain", true));
+            this.no4.Location = new System.Drawing.Point(203, 345);
+            this.no4.Name = "no4";
+            this.no4.Size = new System.Drawing.Size(40, 17);
+            this.no4.TabIndex = 32;
+            this.no4.Text = "No";
+            this.no4.UseVisualStyleBackColor = true;
+            // 
+            // viewrecords
+            // 
+            this.viewrecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewrecords.Location = new System.Drawing.Point(335, 406);
+            this.viewrecords.Name = "viewrecords";
+            this.viewrecords.Size = new System.Drawing.Size(123, 29);
+            this.viewrecords.TabIndex = 33;
+            this.viewrecords.Text = "View Records";
+            this.viewrecords.UseVisualStyleBackColor = true;
+            this.viewrecords.Click += new System.EventHandler(this.Viewrecords_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contactTracingRecordsBindingSource, "Date of Visit", true));
+            this.dateTimePicker1.Location = new System.Drawing.Point(150, 145);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(185, 20);
+            this.dateTimePicker1.TabIndex = 34;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contactTracingRecordsBindingSource, "Date of Birth", true));
+            this.dateTimePicker2.Location = new System.Drawing.Point(153, 170);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(181, 20);
+            this.dateTimePicker2.TabIndex = 35;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contactTracingRecordsBindingSource
+            // 
+            this.contactTracingRecordsBindingSource.DataMember = "Contact Tracing Records";
+            this.contactTracingRecordsBindingSource.DataSource = this.database1DataSet;
+            // 
+            // contact_Tracing_RecordsTableAdapter
+            // 
+            this.contact_Tracing_RecordsTableAdapter.ClearBeforeFill = true;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,16 +377,21 @@
             this.BackgroundImage = global::Contact_Tracing_App.Properties.Resources.img_8181;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.viewrecords);
+            this.Controls.Add(this.no4);
+            this.Controls.Add(this.no3);
+            this.Controls.Add(this.no2);
+            this.Controls.Add(this.no1);
+            this.Controls.Add(this.yes4);
+            this.Controls.Add(this.yes3);
+            this.Controls.Add(this.yes2);
+            this.Controls.Add(this.yes1);
             this.Controls.Add(this.infoCT);
             this.Controls.Add(this.savebttn);
-            this.Controls.Add(this.textBoxaches);
-            this.Controls.Add(this.textBoxbreathing);
-            this.Controls.Add(this.textBoxfever);
-            this.Controls.Add(this.textBoxdrycough);
             this.Controls.Add(this.textBoxpurpose);
             this.Controls.Add(this.textBoxnamevst);
-            this.Controls.Add(this.textBoxbirth);
-            this.Controls.Add(this.textBoxdate);
             this.Controls.Add(this.textBoxaddress);
             this.Controls.Add(this.textBoxname);
             this.Controls.Add(this.namewantvst);
@@ -300,6 +409,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainPage";
             this.Text = "Barangay San Jose Contact Tracing Form";
+            this.Load += new System.EventHandler(this.MainPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactTracingRecordsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,16 +433,24 @@
         private System.Windows.Forms.Label namewantvst;
         private System.Windows.Forms.TextBox textBoxname;
         private System.Windows.Forms.TextBox textBoxaddress;
-        private System.Windows.Forms.TextBox textBoxdate;
-        private System.Windows.Forms.TextBox textBoxbirth;
         private System.Windows.Forms.TextBox textBoxnamevst;
         private System.Windows.Forms.TextBox textBoxpurpose;
-        private System.Windows.Forms.TextBox textBoxdrycough;
-        private System.Windows.Forms.TextBox textBoxfever;
-        private System.Windows.Forms.TextBox textBoxbreathing;
-        private System.Windows.Forms.TextBox textBoxaches;
         private System.Windows.Forms.Button savebttn;
         private System.Windows.Forms.Label infoCT;
+        private System.Windows.Forms.CheckBox yes1;
+        private System.Windows.Forms.CheckBox yes2;
+        private System.Windows.Forms.CheckBox yes3;
+        private System.Windows.Forms.CheckBox yes4;
+        private System.Windows.Forms.CheckBox no1;
+        private System.Windows.Forms.CheckBox no2;
+        private System.Windows.Forms.CheckBox no3;
+        private System.Windows.Forms.CheckBox no4;
+        private System.Windows.Forms.Button viewrecords;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource contactTracingRecordsBindingSource;
+        private Database1DataSetTableAdapters.Contact_Tracing_RecordsTableAdapter contact_Tracing_RecordsTableAdapter;
     }
 }
 

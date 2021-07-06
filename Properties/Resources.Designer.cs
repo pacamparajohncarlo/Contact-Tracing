@@ -79,5 +79,15 @@ namespace Contact_Tracing_App.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop_fight_coronavirus_background_44481_403 {
+            get {
+                object obj = ResourceManager.GetObject("stop-fight-coronavirus-background_44481-403", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

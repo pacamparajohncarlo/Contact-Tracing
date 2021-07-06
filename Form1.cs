@@ -16,7 +16,6 @@ namespace Contact_Tracing_App
         {
             InitializeComponent();
         }
-
         private void Label2_Click(object sender, EventArgs e)
         {
 
@@ -24,9 +23,31 @@ namespace Contact_Tracing_App
 
         private void Savebttn_Click(object sender, EventArgs e)
         {
+            contactTracingRecordsBindingSource.AddNew();
+        }
+
+        private void No3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxpurpose_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Viewrecords_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            Form2 pageforviewingrecords = new Form2();
-            pageforviewingrecords.Show();
+            Form2 mainform = new Form2();
+            mainform.Show();
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'database1DataSet.Contact_Tracing_Records' table. You can move, or remove it, as needed.
+            this.contact_Tracing_RecordsTableAdapter.Fill(this.database1DataSet.Contact_Tracing_Records);
+
         }
     }
 }

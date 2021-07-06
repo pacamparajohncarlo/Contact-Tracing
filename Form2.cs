@@ -16,5 +16,16 @@ namespace Contact_Tracing_App
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        { 
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'database1DataSet.Contact_Tracing_Records' table. You can move, or remove it, as needed.
+            this.contact_Tracing_RecordsTableAdapter.Fill(this.database1DataSet.Contact_Tracing_Records);
+
+        }
     }
 }
